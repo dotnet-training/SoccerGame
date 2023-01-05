@@ -1,6 +1,7 @@
 ﻿namespace SoccerGame.Repositories
 {
     using Microsoft.EntityFrameworkCore;
+
     public interface ITeamRepository
     {
         Task<Team> Add(Team team);
