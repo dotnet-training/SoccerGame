@@ -1,8 +1,9 @@
 ﻿namespace SoccerGame
 {
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
 
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext
     {
         public DbSet<Player> Players { get; set; }
         public DbSet<Team> Teams { get; set; }
@@ -20,6 +21,9 @@
             //modelBuilder.ApplyConfiguration(new TeamConfiguration());
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+
+
+
         }
     }
 }
